@@ -2,6 +2,15 @@
 
 <p>สวัสดีครับ 👋 นี่คือ Angular ตัวใหม่ (Standalone + Signal)!</p>
 
-<button (click)="title.set('คุณคลิกแล้ว 🎉')">
-  คลิกเพื่อเปลี่ยนข้อความ
+<hr />
+
+<label for="name"> พิมพ์ชื่อของคุณ</label>
+<input id="name" type="text" [value]="name()" (input)="name.set($any($event.target).value)" />
+
+<p> คุณพิมพ์ว่า <strong>{{name}}</strong></p>
+
+<hr />
+
+<button (click)="name.set('Angular Developer 🎉')">
+  ตั้งชื่ออัตโนมัติ
   </button>
