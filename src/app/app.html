@@ -14,6 +14,6 @@
 <button (click)="name.set('Angular Developer 🎉')">
   ตั้งชื่ออัตโนมัติ
   </button>
-
-<app-hello-child [name]="name()"></app-hello-child>
+  
+<app-hello-child [name]="name()" (nameChanged)="updateName($event)"></app-hello-child>
 

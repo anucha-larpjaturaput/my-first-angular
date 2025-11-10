@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hello-child',
@@ -7,6 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrl: './hello-child.css'
 })
 export class HelloChild {
-  @Input() name= ''; // รับค่าจาก parent
+  @Input() name = ''; // รับค่าจาก parent
+ @Output() nameChanged = new EventEmitter<string>();
+
+sendBack() {
+  const newName = `${this.name} (ส่งกลับจากลูก 👶🚀)`;
+  this.nameChanged.emit(newName);
+}
 
 }
